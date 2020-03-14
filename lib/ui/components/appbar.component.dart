@@ -15,9 +15,12 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
         elevation: 7,
         iconTheme: Theme.of(context).iconTheme,
         title: Container(
-          child: Image.network(
-              'https://dkcih82i8p5bk.cloudfront.net/static/logo_cambio_seguro.png',
-              width: 140),
+          child: Hero(
+            tag: 'imageHero',
+            child: Image.network(
+                'https://dkcih82i8p5bk.cloudfront.net/static/logo_cambio_seguro.png',
+                width: 140),
+          ),
         ));
   }
 
