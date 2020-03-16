@@ -45,6 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 )),
               ),
               _renderCajaContenedora(),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
@@ -65,6 +68,18 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 20,
           ),
           _renderBodyForm(),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              "Gana 0.58 más que en el banco.",
+              style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              color: Color(0XFF07001d)
+            ),),
+          ),
+          _renderButtonStartOperation(),
+          _renderInfoPreferentialRates(),
         ],
       ),
     );
@@ -85,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
           DivisaInputDollarComponent()
         ],
       ),
+      
     );
   }
 
@@ -141,6 +157,34 @@ class _HomeScreenState extends State<HomeScreen> {
                           : Colors.grey))),
         ),
       ],
+    );
+  }
+
+  Widget _renderButtonStartOperation() {
+    return SizedBox(
+      width: double.infinity,
+      child: RaisedButton(
+        shape: new RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15)
+        ),
+        padding: EdgeInsets.all(15),
+        textColor: Colors.white,
+        color: Theme.of(context).primaryColor,
+        onPressed: () => {},
+        child: new Text("Iniciar operación", style: TextStyle(fontSize: 18.0))
+      )
+    );
+  }
+
+  Widget _renderInfoPreferentialRates() {
+    return Padding(
+      padding: EdgeInsets.only(top: 20, bottom: 0, right: 1, left: 0),
+        child: Text(
+          "Tipo de cambio preferencial para montos mayores a 5,000.00 o S/ 15,000.00. Hacer clic",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 17, color: Color(0XFF463d60)),
+
+        )
     );
   }
 }
